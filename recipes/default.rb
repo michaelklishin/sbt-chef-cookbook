@@ -28,10 +28,7 @@ when "debian", "ubuntu"
   %w(sbt-0.10.1.deb).each do |deb|
     path = File.join(tmp, deb)
 
-    cookbook_file(path) do
-      owner "vagrant"
-      group "vagrant"
-    end
+    cookbook_file(path)
 
     package(deb) do
       action   :install
